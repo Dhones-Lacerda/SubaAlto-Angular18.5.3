@@ -1,1 +1,748 @@
+/* Paleta de Cores */
+:root {
+  --azul-escuro: #003366;
+  --azul-medio: #336699;
+  --azul-claro: #6699CC;
+  --azul-muito-claro: #99CCFF;
+  --branco: #FFFFFF;
+}
+
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Header */
+header {
+  background-color: var(--azul-claro);
+  color: var(--branco);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between; /* Espaça o título e a navegação */
+  align-items: center; /* Alinha verticalmente no centro */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header nav {
+  margin-top: 15px; /* Espaçamento entre o título e a navegação */
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  margin-left: auto; /* Alinha a lista à direita */
+}
+
+header nav ul li {
+  display: inline; /* Garante que cada item da lista fique em linha */
+}
+
+header nav ul li a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px; /* Aumenta o padding para acomodar o tamanho da fonte */
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+header nav ul li a:hover {
+  background-color: var(--hover-color); /* Cor de fundo ao passar o mouse */
+  color: var(--azul-muito-claro); /* Muda a cor do texto no hover */
+}
+
+/* Imagem da capa */
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Ajusta a altura da seção da imagem */
+  overflow: hidden; /* Garante que a imagem não ultrapasse os limites da seção */
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz com que a imagem cubra a área da seção mantendo sua proporção */
+  display: block; /* Remove o espaçamento abaixo da imagem */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Escurece a imagem para o texto se destacar */
+  z-index: 1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o texto vertical e horizontalmente */
+  text-align: center;
+  color: var(--branco);
+  z-index: 2; /* Garante que o texto esteja acima da imagem e sobreposição */
+  padding: 20px;
+}
+
+.hero-text h2 {
+  font-size: 3em;
+  margin-bottom: 40px;
+}
+
+.hero-text a {
+  background-color: var(--azul-claro); /* Cor do botão */
+  color: var(--branco);
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 40px;
+}
+
+.hero-text a:hover {
+  background-color: var(--azul-medio); /* Cor do botão ao passar o mouse */
+}
+
+/* Estilos para a seção Home */
+#home {
+  background-color: #e0f7fa; /* Cor de fundo suave, azul claro */
+  padding: 50px 20px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento do texto */
+  border-bottom: 2px solid #b2ebf2; /* Borda inferior sutil */
+}
+
+#home h2 {
+  font-size: 2.5em; /* Tamanho da fonte do título */
+  color: #00796b; /* Cor verde escuro */
+  margin-bottom: 20px; /* Espaço abaixo do título */
+  font-family: 'Arial', sans-serif; /* Fonte para o título */
+}
+
+#home p {
+  font-size: 1.2em; /* Tamanho da fonte do parágrafo */
+  color: #004d40; /* Cor verde mais escuro */
+  line-height: 1.5; /* Altura da linha para melhor legibilidade */
+  max-width: 800px; /* Largura máxima do parágrafo */
+  margin: 0 auto; /* Centralizar o parágrafo */
+  font-family: 'Arial', sans-serif; /* Fonte para o parágrafo */
+}
+
+/* Estilos para a seção Histórico da Marca */
+#historico {
+  background-color: #ffffff; /* Cor de fundo branca para clareza */
+  padding: 50px 20px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento do texto */
+  border: 1px solid #e0e0e0; /* Borda sutil para definição da seção */
+  border-radius: 8px; /* Cantos arredondados da borda */
+  margin: 20px auto; /* Margem para espaçamento em relação às outras seções */
+  max-width: 900px; /* Largura máxima para melhorar a leitura */
+}
+
+#historico h2 {
+  font-size: 2.5em; /* Tamanho da fonte do título */
+  color: #00796b; /* Cor verde escuro para combinar com o tema de escalada */
+  margin-bottom: 20px; /* Espaço abaixo do título */
+  font-family: 'Arial', sans-serif; /* Fonte para o título */
+}
+
+#historico p {
+  font-size: 1.2em; /* Tamanho da fonte do parágrafo */
+  color: #004d40; /* Cor verde escuro para o texto */
+  line-height: 1.6; /* Altura da linha para melhorar a legibilidade */
+  margin-bottom: 20px; /* Espaço abaixo de cada parágrafo */
+  font-family: 'Arial', sans-serif; /* Fonte para o parágrafo */
+}
+
+/* Estilos para a seção "Sobre" */
+#sobre {
+  padding: 20px; /* Adiciona espaçamento interno em torno do conteúdo da seção */
+  background-color: #f4f4f4; /* Define a cor de fundo da seção */
+  text-align: center; /* Centraliza o texto dentro da seção */
+}
+
+/* Estilo do título principal da seção */
+.section-title {
+  font-size: 2.5em; /* Define o tamanho da fonte do título principal */
+  margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
+  color: var(--azul-escuro); /* Define a cor do título principal */
+}
+
+/* Container para subseções dentro da seção "Sobre" */
+.sobre-container {
+  margin: 20px auto; /* Adiciona margem superior e inferior e centraliza horizontalmente */
+  max-width: 800px; /* Define a largura máxima do container */
+  text-align: left; /* Alinha o texto à esquerda dentro do container */
+}
+
+/* Estilo dos títulos das subseções */
+.subsection-title {
+  font-size: 2em; /* Define o tamanho da fonte dos títulos das subseções */
+  margin-bottom: 10px; /* Adiciona margem inferior para espaçamento */
+  color: var(--azul-escuro); /* Define a cor dos títulos das subseções */
+  margin-bottom: 30px;
+}
+
+/* Estilo do texto das subseções */
+.subsection-content {
+  font-size: 1.2em; /* Define o tamanho da fonte do texto das subseções */
+  line-height: 1.6; /* Define a altura da linha para melhor legibilidade */
+  color: #333; /* Define a cor do texto das subseções */
+  margin-bottom: 20px;
+}
+
+/* Container para os tipos de escalada */
+.escalada-tipos {
+  display: flex; /* Usa o modelo de layout flexível para o container */
+  flex-direction: column; /* Alinha os itens em uma coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  gap: 30px; /* Adiciona espaço entre os itens */
+  padding: 0 20px; /* Adiciona padding nas laterais do container */
+}
+
+/* Estilo dos itens de escalada */
+.escalada-item {
+  display: flex; /* Usa o modelo de layout flexível para o item */
+  align-items: center; /* Alinha os itens verticalmente */
+  gap: 20px; /* Adiciona espaço entre a imagem e o texto */
+  max-width: 800px; /* Define a largura máxima do item */
+  width: 100%; /* Define a largura como 100% do container pai */
+}
+
+/* Alinha os itens de escalada à esquerda */
+.escalada-item.esquerda {
+  flex-direction: row; /* Alinha a imagem à esquerda e o texto à direita */
+}
+
+/* Alinha os itens de escalada à direita */
+.escalada-item.direita {
+  flex-direction: row-reverse; /* Alinha a imagem à direita e o texto à esquerda */
+}
+
+/* Estilo das imagens nos itens de escalada */
+.escalada-item img {
+  width: 300px; /* Define a largura da imagem */
+  height: 200px; /* Define a altura da imagem */
+  object-fit: cover; /* Ajusta a imagem para cobrir a área sem distorcer */
+  border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+}
+
+/* Container de texto para os itens de escalada */
+.escalada-texto {
+  max-width: 500px; /* Define a largura máxima do container de texto */
+}
+
+/* Estilo dos títulos dentro do container de texto */
+.escalada-texto h4 {
+  font-size: 1.8em; /* Define o tamanho da fonte do título */
+  color: var(--azul-escuro); /* Define a cor do título */
+  margin-bottom: 10px; /* Adiciona margem inferior para espaçamento */
+}
+
+/* Estilo dos parágrafos dentro do container de texto */
+.escalada-texto p {
+  font-size: 1.2em; /* Define o tamanho da fonte do texto */
+  color: #333; /* Define a cor do texto */
+  line-height: 1.6; /* Define a altura da linha para melhor legibilidade */
+}
+
+/* Container para a grade de vídeos */
+
+.video-grid {
+  display: flex; /* Usa o modelo de layout flexível para o container */
+  flex-wrap: wrap; /* Permite que os itens envolvam a linha quando necessário */
+  gap: 20px; /* Adiciona espaço entre os itens */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilo dos itens de vídeo */
+.video-item {
+  flex: 1 1 45%; /* Permite que os itens se ajustem para ocupar 45% do container */
+  max-width: 400px; /* Define a largura máxima do item de vídeo */
+}
+
+.video-item > h4 {
+  font-size: 20px; /* Tamanho grande para o título dos vídeos */
+  color: var(--azul-escuro); /* Cor verde escura */
+  margin-bottom: 16px; /* Espaço abaixo do título */
+}
+
+/* Estilo dos iframes de vídeo */
+.video-item iframe {
+  width: 100%; /* Define a largura do iframe como 100% do container pai */
+  height: 225px; /* Define a altura do iframe */
+  border-radius: 8px; /* Adiciona bordas arredondadas ao iframe */
+}
+
+
+
+/* Estilos para a seção Benefícios da Escalada */
+#beneficios {
+  padding: 50px 20px; /* Espaçamento interno */
+  background-color: #e0f2f1; /* Cor de fundo verde claro */
+}
+
+#beneficios h2 {
+  font-size: 2.5em; /* Tamanho grande para o título principal */
+  color: #004d40; /* Cor verde escura */
+  margin-bottom: 30px; /* Espaço abaixo do título */
+  text-align: center; /* Centraliza o título */
+  font-family: 'Arial', sans-serif; /* Fonte para o título */
+}
+
+.benefit {
+  display: flex; /* Alinha a imagem e o texto horizontalmente */
+  align-items: center; /* Centraliza verticalmente os itens */
+  margin-bottom: 30px; /* Espaço abaixo de cada bloco de benefício */
+  max-width: 800px; /* Largura máxima do bloco */
+  margin: 0 auto; /* Centraliza o bloco na página */
+  background-color: #ffffff; /* Fundo branco para o bloco */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  padding: 20px; /* Espaçamento interno */
+}
+
+.benefit-img {
+  width: 250px; /* Largura da imagem */
+  height: 200px; /* Altura da imagem */
+  object-fit: cover; /* Ajusta a imagem para preencher o espaço */
+  border-radius: 8px; /* Bordas arredondadas para a imagem */
+  margin-right: 20px; /* Espaço à direita da imagem */
+}
+
+.benefit-text {
+  flex: 1; /* Faz com que o texto ocupe o espaço restante */
+}
+
+.benefit-text h3 {
+  font-size: 1.8em; /* Tamanho do título do benefício */
+  color: #00796b; /* Cor verde para o título */
+  margin-bottom: 10px; /* Espaço abaixo do título */
+  font-family: 'Arial', sans-serif; /* Fonte para o título */
+}
+
+.benefit-text p {
+  font-size: 1.1em; /* Tamanho da fonte para o texto */
+  color: #333333; /* Cor escura para o texto */
+  line-height: 1.6; /* Altura da linha para melhor leitura */
+  font-family: 'Arial', sans-serif; /* Fonte para o texto */
+}
+
+#inscricao {
+padding: 20px;
+margin: 40px;
+background-color: #f7f7f7; /* Cor opcional */
+}
+
+#inscricao h2 {
+/* Estilos do header */
+text-align: center;
+font-weight: bold;
+font-size: 34px;
+margin-bottom: 20px;
+color: var(--azul-escuro);
+}
+
+form {
+/* Estilo do form container */
+max-width: 500px;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+/* Estilo para as labels */
+display: block;
+font-weight: bold;
+color: var(--azul-claro);
+margin-bottom: 10px;
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="tel"], select {
+/* Estilo para os input fields */
+width: 95%;
+height: 10px;
+margin-bottom: 20px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+input[type="checkbox"] {
+/* Style the checkboxes */
+margin-right: 10px;
+}
+
+input[type="checkbox"] + label {
+/* Estilo para o checkbox */
+display: inline-block;
+margin-bottom: 20px;
+}
+
+textarea {
+/* Estilo textarea */
+width: 95%;
+height: 100px;
+margin-bottom: 20px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+button[type="submit"] {
+/* Estilos do botão*/
+width: 100%;
+height: 40px;
+background-color: #4CAF50;
+color: #fff;
+padding: 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button[type="submit"]:hover {
+background-color: #3e8e41;
+}
+
+#contato {
+padding: 20px;
+margin: 40px auto; /*  adiciona auto margen para o centro da seção*/
+background-color: #f7f7f7; /* Optional background color */
+text-align: center; /* Add text-align center to center the content */
+}
+
+#contato h2 {
+/* Style the heading */
+font-size: 36px;
+font-weight: bold;
+margin-bottom: 20px;
+color: var(--azul-escuro);
+}
+
+#contato p {
+/* Style do paragrafo */
+font-size: 16px;
+font-weight: 100;
+line-height: 1.5;
+margin-bottom: 5px;
+}
+
+#mapa {
+/* Style do map container */
+width: 600px;
+margin: 20px auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+
+#mapa h3 {
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.vca_map {
+/* Style the iframe */
+width: 100%;
+height: 450px;
+border: none; /* Remove a borda */
+border-radius: 10px;
+}
+
+/* Estilo para o Rodapé */
+footer {
+  background-color: var(--azul-escuro);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+footer p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Layout para Tablets (768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Estilos para o Header */
+  header {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px;
+  }
+
+  header h1 {
+      font-size: 2.2em;
+  }
+
+  header nav ul {
+      gap: 15px;
+  }
+
+  /* Estilos para a Seção Hero */
+  .hero-image {
+      height: 350px;
+  }
+
+  .hero-text h2 {
+      font-size: 2.5em;
+  }
+
+  .hero-text a {
+      padding: 12px 22px;
+      font-size: 1.1em;
+  }
+
+  /* Estilos para a Seção Home */
+  #home h2 {
+      font-size: 2.2em;
+  }
+
+  #home p {
+      font-size: 1.1em;
+      max-width: 80%;
+  }
+
+  /* Estilos para a Seção Histórico da Marca */
+  #historico {
+      padding: 40px 15px;
+      max-width: 85%;
+  }
+
+  #historico h2 {
+      font-size: 2.2em;
+  }
+
+  #historico p {
+      font-size: 1.1em;
+  }
+
+  /* Estilos para a Seção Sobre */
+  .section-title {
+      font-size: 2.2em;
+  }
+
+  .subsection-title {
+      font-size: 2em;
+  }
+
+  .escalada-item img {
+      width: 250px;
+      height: 150px;
+  }
+
+  /* Estilos para a Seção Benefícios da Escalada */
+  .benefit {
+      flex-direction: row;
+  }
+
+  .benefit-img {
+      width: 220px;
+      height: 150px;
+  }
+
+  .benefit-text h3 {
+      font-size: 1.7em;
+  }
+
+  .benefit-text p {
+      font-size: 1.1em;
+  }
+
+  /* Estilos para o Formulário de Inscrição */
+  form {
+      padding: 15px;
+  }
+
+  button[type="submit"] {
+      font-size: 1.1em;
+  }
+
+  /* Estilos para o Rodapé */
+  footer p {
+      font-size: 15px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+  /* Estilos para o Header */
+  header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  header h1 {
+      font-size: 2em;
+  }
+
+  header nav ul {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  header nav ul li {
+      margin-bottom: 10px; /* Espaçamento entre os links */
+  }
+
+  /* Estilos para a Seção Hero */
+  .hero-image {
+      height: 300px;
+  }
+
+  .hero-text h2 {
+      font-size: 1.8em;
+  }
+
+  .hero-text a {
+      padding: 3px 8px;
+      font-size: 14px;
+  }
+
+  /* Estilos para a Seção Home */
+  #home h2 {
+      font-size: 2em;
+  }
+
+  #home p {
+      font-size: 1em;
+      max-width: 90%;
+  }
+
+  /* Estilos para a Seção Histórico da Marca */
+  #historico {
+      padding: 30px 10px;
+      max-width: 90%;
+  }
+
+  #historico h2 {
+      font-size: 2em;
+  }
+
+  #historico p {
+      font-size: 1em;
+  }
+
+  /* Estilos para a Seção Sobre */
+  .section-title {
+      font-size: 2em;
+  }
+
+  .subsection-title {
+      font-size: 1.8em;
+  }
+
+  .escalada-item {
+      flex-wrap: wrap;
+  }
+  .escalada-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+  }
+  .escalada-item p {
+      width: 100%;
+      margin-top: 10px;
+  }
+
+  /* Estilos para a Seção Benefícios da Escalada */
+  .benefit {
+      flex-direction: column;
+      text-align: center; /* Centraliza o conteúdo */
+  }
+
+  .benefit-img {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+
+  .benefit-text h3 {
+      font-size: 1.6em;
+  }
+
+  .benefit-text p {
+      font-size: 1em;
+  }
+
+  /* Estilos para a Seção Vídeos */
+
+  .video-grid {
+      flex-direction: column;
+  }
+
+  .video-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .video-section iframe {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      margin-bottom: 20px;
+  }
+
+  /* Estilos para o Formulário de Inscrição */
+  form {
+      padding: 10px;
+  }
+
+  input[type="text"], input[type="number"], input[type="email"], input[type="tel"], select {
+      width: 88%;
+  }
+
+  textarea {
+      width: 88%;
+  }
+
+  button[type="submit"] {
+      font-size: 1em;
+  }
+
+  /* Estilos para o Mapa */
+  #mapa {
+      width: 100%;
+      padding: 15px;
+      box-shadow: none;
+  }
+
+  .vca_map {
+      height: 300px;
+      max-width: 80%; /* Garante que o mapa não estoure o layout */
+  }
+
+  /* Estilos para o Rodapé */
+  footer p {
+      font-size: 14px;
+  }
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
